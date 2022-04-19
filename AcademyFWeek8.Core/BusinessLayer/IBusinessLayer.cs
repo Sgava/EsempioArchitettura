@@ -14,5 +14,10 @@ namespace AcademyFWeek8.Core.BusinessLayer
         Esito AggiungiCorso(Corso nuovoCorso);
         Esito ModificaCorso(string? codice, string? nuovoNome, string? nuovaDescrizione);
         Esito EliminaCorso(string? codice);
+        List<Studente> GetAllStudenti();
+        Esito InserisciNuovoStudente(Studente nuovoStudente);
+        Esito ModificaMailStudente(int idStudenteDaModificare, string? nuovaEmail);
+        Esito EliminaStudente(int idStudenteDaEliminare);
+        List<Studente> GetStudentiByCorsoCodice(string? codiceCorso);
     }
 }

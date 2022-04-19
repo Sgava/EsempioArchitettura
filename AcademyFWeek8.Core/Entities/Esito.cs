@@ -8,7 +8,7 @@ namespace AcademyFWeek8.Core.Entities
 {
     public class Esito
     {
-        public bool isOk { get; set; }
+        public bool IsOk { get; set; }
         public string Messaggio { get; set; }
     }
 }
