@@ -11,7 +11,7 @@ namespace AcademyFWeek8.Presentation
 {
     internal static class Menu
     {
-        private static readonly IBusinessLayer bl = new MainBusinessLayer(new RepositoryCorsiMock());
+        private static readonly IBusinessLayer bl = new MainBusinessLayer(new RepositoryCorsiMock(), new RepositoryStudentiMock());
 
         
         internal static void Start()
@@ -35,6 +35,12 @@ namespace AcademyFWeek8.Presentation
                 case 2:
                     InserisciNuovoCorso();
                     break;
+                case 3:
+                    ModificaCorso();
+                    break; 
+                case 4:
+                    EliminaCorso();
+                    break;
                 case 0:
                     return false;                    
                 default:
@@ -42,6 +48,29 @@ namespace AcademyFWeek8.Presentation
                     break;
             }
             return true;
+        }
+
+        private static void EliminaCorso()
+        {
+            VisualizzaCorsi();
+            Console.WriteLine("Quale corso vuoi eliminare? Inserisci il codice");
+            string codice = Console.ReadLine();
+            Esito esito=bl.EliminaCorso(codice);
+            Console.WriteLine(esito.Messaggio);
+        }
+
+        private static void ModificaCorso()
+        {
+            VisualizzaCorsi();
+            Console.WriteLine("Quale corso vuoi modificare? Inserisci il codice");
+            string codice = Console.ReadLine();
+            Console.WriteLine("Inserisci il nuovo nome del corso");
+            string nuovoNome=Console.ReadLine();
+            Console.WriteLine("Inserisci la nuova descrizione del corso");
+            string nuovaDescrizione=Console.ReadLine();
+
+            Esito esito=bl.ModificaCorso(codice, nuovoNome, nuovaDescrizione);
+            Console.WriteLine(esito.Messaggio);
         }
 
         private static void InserisciNuovoCorso()
@@ -65,11 +94,18 @@ namespace AcademyFWeek8.Presentation
 
         private static void VisualizzaCorsi()
         {
-            var listaCorsi=bl.GetAllCorsi();            
-            Console.WriteLine("Ecco l'elenco dei corsi presenti:");
-            foreach (var item in listaCorsi)
+            var listaCorsi=bl.GetAllCorsi();
+            if (listaCorsi.Count == 0)
             {
-                Console.WriteLine(item);
+                Console.WriteLine("Non ci sono corsi");
+            }
+            else
+            {
+                Console.WriteLine("Ecco l'elenco dei corsi presenti:");
+                foreach (var item in listaCorsi)
+                {
+                    Console.WriteLine(item);
+                }
             }
         }
 
@@ -78,6 +114,8 @@ namespace AcademyFWeek8.Presentation
             Console.WriteLine("******************MENU*****************");
             Console.WriteLine("1.Visualizza Corsi");
             Console.WriteLine("2.Inserisci nuovo Corso");
+            Console.WriteLine("3.Modifica Corso");
+            Console.WriteLine("4.Elimina Corso");
             Console.WriteLine("\n0. Exit");
 
             int scelta;

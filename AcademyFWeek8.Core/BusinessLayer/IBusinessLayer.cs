@@ -12,5 +12,7 @@ namespace AcademyFWeek8.Core.BusinessLayer
         //Elenco dei metodi/funzionalità esposte
         List<Corso> GetAllCorsi();
         Esito AggiungiCorso(Corso nuovoCorso);
+        Esito ModificaCorso(string? codice, string? nuovoNome, string? nuovaDescrizione);
+        Esito EliminaCorso(string? codice);
     }
 }

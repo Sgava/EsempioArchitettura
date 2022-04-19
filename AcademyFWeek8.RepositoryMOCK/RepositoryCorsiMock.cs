@@ -28,7 +28,12 @@ namespace AcademyFWeek8.RepositoryMOCK
 
         public bool Delete(Corso item)
         {
-            throw new NotImplementedException();
+            if (item == null)
+            {
+                return false;
+            }
+            corsi.Remove(item);
+            return true;
         }
 
         public List<Corso> GetAll()
@@ -50,7 +55,16 @@ namespace AcademyFWeek8.RepositoryMOCK
 
         public Corso Update(Corso item)
         {
-            throw new NotImplementedException();
+            foreach (var c in corsi)
+            {
+                if (c.CorsoCodice == item.CorsoCodice)
+                {
+                    c.Nome = item.Nome;
+                    c.Descrizione = item.Descrizione;
+                    return c;
+                }
+            }
+            return null;
         }
     }
 }
