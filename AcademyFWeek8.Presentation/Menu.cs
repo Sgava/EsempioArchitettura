@@ -1,5 +1,6 @@
 ﻿using AcademyFWeek8.Core.BusinessLayer;
 using AcademyFWeek8.Core.Entities;
+using AcademyFWeek8.RepositoryADO;
 using AcademyFWeek8.RepositoryMOCK;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,8 @@ namespace AcademyFWeek8.Presentation
 {
     internal static class Menu
     {
-        private static readonly IBusinessLayer bl = new MainBusinessLayer(new RepositoryCorsiMock(), new RepositoryStudentiMock());
+        //private static readonly IBusinessLayer bl = new MainBusinessLayer(new RepositoryCorsiMock(), new RepositoryStudentiMock());
+        private static readonly IBusinessLayer bl = new MainBusinessLayer(new RepositoryCorsiADO(), new RepositoryStudentiADO());
 
         
         internal static void Start()
