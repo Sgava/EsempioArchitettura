@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcademyFWeek8.Core", "Acade
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcademyFWeek8.RepositoryMOCK", "AcademyFWeek8.RepositoryMOCK\AcademyFWeek8.RepositoryMOCK.csproj", "{0C2F83DF-591D-4974-89A8-9B8AF73039F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademyFWeek8.RepositoryADO", "AcademyFWeek8.RepositoryADO\AcademyFWeek8.RepositoryADO.csproj", "{169DD696-2FED-43D0-851E-34F1898A3179}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcademyFWeek8.RepositoryADO", "AcademyFWeek8.RepositoryADO\AcademyFWeek8.RepositoryADO.csproj", "{169DD696-2FED-43D0-851E-34F1898A3179}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademyFWeek8.Tests", "AcademyFWeek8.Tests\AcademyFWeek8.Tests.csproj", "{D933E4C4-F205-487D-B1BF-F84D777BEABE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{169DD696-2FED-43D0-851E-34F1898A3179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{169DD696-2FED-43D0-851E-34F1898A3179}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{169DD696-2FED-43D0-851E-34F1898A3179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D933E4C4-F205-487D-B1BF-F84D777BEABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D933E4C4-F205-487D-B1BF-F84D777BEABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D933E4C4-F205-487D-B1BF-F84D777BEABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D933E4C4-F205-487D-B1BF-F84D777BEABE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
